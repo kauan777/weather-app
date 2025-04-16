@@ -13,7 +13,7 @@ export const useSearch = () => {
 
   const handleSearch = () => {
     navigation.dispatch(
-      StackActions.push('WeatherDetails', {
+      StackActions.push('Weather', {
         location: search,
       }),
     );
