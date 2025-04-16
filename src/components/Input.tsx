@@ -14,10 +14,9 @@ const Input = forwardRef<React.ElementRef<typeof TextInput>, InputProps>(
       {label && <Text className={cn('text-base', labelClasses)}>{label}</Text>}
       <TextInput
         ref={ref}
-        className={cn(
-          inputClasses,
-          'border border-input py-2.5 px-4 rounded-lg',
-        )}
+        selectionColor={'#fff'}
+        placeholderTextColor={'#7F7F98'}
+        className={cn(inputClasses, 'bg-gray-600 text-white px-5 py-5 rounded-md')}
         {...props}
       />
     </View>
