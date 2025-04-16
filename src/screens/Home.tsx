@@ -16,7 +16,7 @@ export function HomeScreen() {
       <Text className="text-white font-bold text-2xl">WeatherAppK</Text>
       <View className="mt-72 gap-8 w-full">
         <View className="gap-1">
-          <Text className="text-white text-center font-medium text-base text-xl">
+          <Text className="text-white text-center font-bold text-xl">
             Boas vindas ao <Text className="text-blue-light">WeatherAppK</Text>{' '}
           </Text>
           <Text className="text-white text-center text-sm">
