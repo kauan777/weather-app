@@ -1,7 +1,7 @@
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import React from 'react';
-import FewCloudsNightIcon from '@/assets/icons/FewCloudsNight';
 import WeatherSummaryBackground from './Background';
+import {getImageWeather} from '@/lib/getImageWeather';
 
 export interface WeatherSummaryCardProps {
   location: string;
@@ -14,7 +14,7 @@ export interface WeatherSummaryCardProps {
 
 export default function WeatherSummaryCard() {
   return (
-    <View className="pt-5 px-4 bg-gray-500 rounded-md w-full overflow-hidden">
+    <View className="pt-5 pl-4 bg-gray-500 rounded-lg w-full overflow-hidden">
       <View className="z-10">
         <Text className="text-white text-2xl font-bold">Porto Alegre, RS</Text>
         <Text className="text-white">Segunda-feira, 15 de maio de 2023</Text>
@@ -25,7 +25,10 @@ export default function WeatherSummaryCard() {
           <Text className="text-white font-bold ">26ºc / 32ºc</Text>
           <Text className="text-white font-bold ">Poucas nuvens</Text>
         </View>
-        <FewCloudsNightIcon />
+        <Image
+          source={getImageWeather(1000, true)}
+          className="w-[160px] h-[160px]"
+        />
       </View>
       <WeatherSummaryBackground condition_code={1000} is_day={true} />
     </View>
