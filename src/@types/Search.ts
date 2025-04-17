@@ -14,7 +14,7 @@ export interface SearchResponse {
     last_updated: string;
     temp_c: number;
     temp_f: number;
-    is_day: number;
+    isDay: number;
     condition: {
       text: string;
       icon: string;
