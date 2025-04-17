@@ -1,5 +1,5 @@
 // Background clearImages
-import {WeatherCondition} from '@/@types/WeatherCondition';
+import {WeatherCondition} from '@/@types/Weather';
 import ClearDayBackground from '@/assets/background/ClearDay.png';
 import ClearNightBackground from '@/assets/background/ClearNight.png';
 import CloudsDayBackground from '@/assets/background/CloudsDay.png';
@@ -21,20 +21,20 @@ import StormDayIcon from '@/assets/icons/StormDay.png';
 
 export const getImageWeather = (
   condition_code: number,
-  is_day: boolean,
+  isDay: boolean,
   isBackground: boolean = false,
 ) => {
   if (isBackground) {
     switch (condition_code) {
       case WeatherCondition.ENSOLARADO:
-        return is_day ? ClearDayBackground : ClearNightBackground;
+        return isDay ? ClearDayBackground : ClearNightBackground;
 
       case WeatherCondition.PARCIALMENTE_NUBLADO:
-        return is_day ? CloudsDayBackground : FewCloudsNightBackground;
+        return isDay ? CloudsDayBackground : FewCloudsNightBackground;
 
       case WeatherCondition.NUBLADO:
       case WeatherCondition.ENCOBERTO:
-        return is_day ? CloudyDayBackground : CloudyNightBackground;
+        return isDay ? CloudyDayBackground : CloudyNightBackground;
 
       case WeatherCondition.CHUVA_LEVE:
       case WeatherCondition.CHUVA_MODERADA:
@@ -48,20 +48,20 @@ export const getImageWeather = (
         return StormDayBackground;
 
       default:
-        return is_day ? CloudyDayBackground : CloudyNightBackground;
+        return isDay ? CloudyDayBackground : CloudyNightBackground;
     }
   }
 
   switch (condition_code) {
     case WeatherCondition.ENSOLARADO:
-      return is_day ? ClearDayIcon : ClearNightIcon;
+      return isDay ? ClearDayIcon : ClearNightIcon;
 
     case WeatherCondition.PARCIALMENTE_NUBLADO:
-      return is_day ? CloudsDayIcon : FewCloudsNightIcon;
+      return isDay ? CloudsDayIcon : FewCloudsNightIcon;
 
     case WeatherCondition.NUBLADO:
     case WeatherCondition.ENCOBERTO:
-      return is_day ? CloudyDayIcon : CloudyNightIcon;
+      return isDay ? CloudyDayIcon : CloudyNightIcon;
 
     case WeatherCondition.CHUVA_LEVE:
     case WeatherCondition.CHUVA_MODERADA:
@@ -74,6 +74,6 @@ export const getImageWeather = (
     case WeatherCondition.POSSIBILIDADE_TROVOADA:
       return StormDayIcon;
     default:
-      return is_day ? CloudyDayIcon : CloudyNightIcon;
+      return isDay ? CloudyDayIcon : CloudyNightIcon;
   }
 };
