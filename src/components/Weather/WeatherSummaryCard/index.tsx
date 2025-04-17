@@ -39,7 +39,7 @@ export default function WeatherSummaryCard({
           <Text className="text-white font-bold ">{condition}</Text>
         </View>
         <Image
-          source={getImageWeather(1000, true)}
+          source={getImageWeather(condition_code, isDay)}
           className="w-[160px] h-[160px]"
         />
       </View>
