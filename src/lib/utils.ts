@@ -10,3 +10,8 @@ export const handleMessageError = (error: unknown) => {
   }
   return 'Erro desconhecido';
 };
+
+export function formatFloatToInt(value: number): number {
+  return Math.trunc(value);
+}
+
