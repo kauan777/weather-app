@@ -47,6 +47,23 @@ Em seguida, e sempre que atualizar suas dependências nativas, execute:
 bundle exec pod install
 ```
 
+### Configuração da API
+
+Este aplicativo utiliza a [Weather API](https://www.weatherapi.com/) para obter dados meteorológicos. Para que o aplicativo funcione corretamente, você precisa:
+
+1. Criar uma conta em [weatherapi.com](https://www.weatherapi.com/)
+2. Obter sua chave de API gratuita
+3. Adicionar sua chave no arquivo `src/services/axios.ts`, substituindo `YOUR_KEY` pelo valor da sua chave:
+
+```typescript
+export const api = axios.create({
+  baseURL: url,
+  params: {
+    key: 'SUA_CHAVE_AQUI',
+  },
+});
+```
+
 ### Iniciar o Metro Bundler
 
 ```sh
@@ -79,23 +96,6 @@ npm run ios
 
 # OU usando Yarn
 yarn ios
-```
-
-## Configuração da API
-
-Este aplicativo utiliza a [Weather API](https://www.weatherapi.com/) para obter dados meteorológicos. Para que o aplicativo funcione corretamente, você precisa:
-
-1. Criar uma conta em [weatherapi.com](https://www.weatherapi.com/)
-2. Obter sua chave de API gratuita
-3. Adicionar sua chave no arquivo `src/services/axios.ts`, substituindo `YOUR_KEY` pelo valor da sua chave:
-
-```typescript
-export const api = axios.create({
-  baseURL: url,
-  params: {
-    key: 'SUA_CHAVE_AQUI',
-  },
-});
 ```
 
 ## Como recarregar o aplicativo
