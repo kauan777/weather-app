@@ -19,6 +19,9 @@ export const useSearch = () => {
       }),
     );
     setSearch('');
+    setError(null);
+    setAutoComplete([]);
+    setEnabled(false);
   };
 
   const autoCompleteSearch = async (
