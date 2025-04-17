@@ -9,7 +9,9 @@ import {AutoCompleteBox} from '@/components/AutoComplete/Box';
 export function HomeScreen() {
   const {search, handleSearch, setSearch, error, autoComplete} = useSearch();
 
-  const isSameWord = autoComplete.some(item => item.name === search);
+  const isSameWord = autoComplete.some(
+    item => `${item.name}, ${item.region}` === search,
+  );
 
   return (
     <SafeAreaView className="flex-1 bg-gray-900 py-12 px-8 items-center ">

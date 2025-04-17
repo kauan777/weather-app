@@ -20,7 +20,7 @@ export function AutoCompleteBox({
           name={item.name}
           region={item.region}
           onPress={() => {
-            onPressItem(item.name);
+            onPressItem(`${item.name}, ${item.region}`);
           }}
         />
       ))}
