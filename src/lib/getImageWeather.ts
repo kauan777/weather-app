@@ -15,7 +15,7 @@ import ClearNightIcon from '@/assets/icons/ClearNight.png';
 import CloudsDayIcon from '@/assets/icons/FewCloudsDay.png';
 import CloudyDayIcon from '@/assets/icons/CloudyDay.png';
 import CloudyNightIcon from '@/assets/icons/CloudyNight.png';
-import FewCloudsNightIcon from '@/assets/icons/FewcloudsNight.png';
+import FewCloudsNightIcon from '@/assets/icons/FewCloudsNight.png';
 import RainDayIcon from '@/assets/icons/RainDay.png';
 import StormDayIcon from '@/assets/icons/StormDay.png';
 
