@@ -81,8 +81,24 @@ npm run ios
 yarn ios
 ```
 
+## Configuração da API
+
+Este aplicativo utiliza a [Weather API](https://www.weatherapi.com/) para obter dados meteorológicos. Para que o aplicativo funcione corretamente, você precisa:
+
+1. Criar uma conta em [weatherapi.com](https://www.weatherapi.com/)
+2. Obter sua chave de API gratuita
+3. Adicionar sua chave no arquivo `src/services/axios.ts`, substituindo `YOUR_KEY` pelo valor da sua chave:
+
+```typescript
+export const api = axios.create({
+  baseURL: url,
+  params: {
+    key: 'SUA_CHAVE_AQUI',
+  },
+});
+```
+
 ## Como recarregar o aplicativo
 
 - **Android**: Pressione a tecla <kbd>R</kbd> duas vezes ou selecione **"Reload"** no **Menu Dev**, acessado via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) ou <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
 - **iOS**: Pressione <kbd>R</kbd> no Simulador iOS.
-
