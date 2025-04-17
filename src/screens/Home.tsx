@@ -1,4 +1,4 @@
-import {Text, View} from 'react-native';
+import {Switch, Text, View} from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Input} from '@/components/Input';
@@ -7,7 +7,15 @@ import {useSearch} from '@/hooks/useSearch';
 import {AutoCompleteBox} from '@/components/AutoComplete/Box';
 
 export function HomeScreen() {
-  const {search, handleSearch, setSearch, error, autoComplete} = useSearch();
+  const {
+    search,
+    handleSearch,
+    setSearch,
+    error,
+    autoComplete,
+    enabled,
+    setEnabled,
+  } = useSearch();
 
   const isSameWord = autoComplete.some(
     item => `${item.name}, ${item.region}` === search,
@@ -44,6 +52,18 @@ export function HomeScreen() {
 
           {error && <Text className="text-red-500 text-sm">{error}</Text>}
           <Button label="Buscar" onPress={handleSearch} />
+          <View className="items-start w-full">
+            <View className="flex-row items-center gap-3">
+              <Switch
+                value={enabled}
+                onValueChange={setEnabled}
+                trackColor={{false: '#767577', true: '#8FB2F5'}}
+              />
+              <Text className="text-gray-300 font-bold">
+                Habilitar Auto Complete
+              </Text>
+            </View>
+          </View>
         </View>
       </View>
     </SafeAreaView>

@@ -10,6 +10,7 @@ export const useSearch = () => {
   const [error, setError] = useState<string | null>(null);
   const [autoComplete, setAutoComplete] = useState<AutoCompleteItem[]>([]);
   const navigation = useNavigation();
+  const [enabled, setEnabled] = useState(false);
 
   const handleSearch = () => {
     navigation.dispatch(
@@ -27,6 +28,7 @@ export const useSearch = () => {
       const {data} = await api.get('/search.json', {
         params: {
           q: text,
+          lang: 'pt',
         },
       });
       setAutoComplete(data);
@@ -38,12 +40,12 @@ export const useSearch = () => {
   };
 
   useEffect(() => {
-    if (search.length > 3) {
+    if (search.length > 2 && enabled) {
       autoCompleteSearch(search);
     } else {
       setAutoComplete([]);
     }
-  }, [search]);
+  }, [search, enabled]);
 
   return {
     search,
@@ -53,5 +55,7 @@ export const useSearch = () => {
     setError,
     autoCompleteSearch,
     autoComplete,
+    enabled,
+    setEnabled,
   };
 };
