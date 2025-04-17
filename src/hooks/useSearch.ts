@@ -17,6 +17,7 @@ export const useSearch = () => {
         location: search,
       }),
     );
+    setSearch('');
   };
 
   const autoCompleteSearch = async (
