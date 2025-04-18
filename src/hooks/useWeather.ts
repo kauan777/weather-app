@@ -1,6 +1,7 @@
 import {ForecastItem, WeatherDetails} from '@/@types/Weather';
 import {handleMessageError} from '@/lib/utils';
 import {api} from '@/services/axios';
+import moment from 'moment';
 import {useState} from 'react';
 
 export const useWeather = () => {
@@ -30,7 +31,7 @@ export const useWeather = () => {
       const {data} = await api.get('/forecast.json', {
         params: {
           q: location,
-          days: 5,
+          days: 6,
           lang: 'pt',
         },
       });
